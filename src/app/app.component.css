@@ -1,0 +1,25 @@
+.tres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #172940;
+}
+
+.outer {
+  background-color: #172940;
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.head {
+  color: #ffcc00;
+  text-align: center;
+  background-color: #172940;
+  padding: 10px 0;
+  border-bottom: 2px solid #ffcc00;
+
+}

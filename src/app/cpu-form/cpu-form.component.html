@@ -1,0 +1,64 @@
+
+<div class="container">
+  <h2>Recomendação de CPU</h2>
+
+  <form (ngSubmit)="recommendation()">
+    <div>
+      <label for="energyConsumption">Consumo de Energia:</label>
+      <select [(ngModel)]="energyConsumption" name="energyConsumption" id="energyConsumption">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="performance">Desempenho:</label>
+      <select [(ngModel)]="performance" name="performance" id="performance">
+        <option value="Slow">Slow</option>
+        <option value="Medium">Moderate</option>
+        <option value="Fast">Fast</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="cost">Custo:</label>
+      <select [(ngModel)]="cost" name="cost" id="cost">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="applicationType">Tipo de Aplicação:</label>
+      <select [(ngModel)]="applicationType" name="applicationType" id="applicationType">
+        <option value="video editing">Video Editing</option>
+        <option value="gaming">Games</option>
+        <option value="software development">AI</option>
+        <option value="software development">IOT</option>
+      </select>
+    </div>
+
+    <button type="submit">Buscar Recomendações</button>
+  </form>
+
+  <button mat-button (click)="showMoreInfo()">Saiba Mais</button>
+
+
+  <!-- Exibir mensagem de erro -->
+  <div *ngIf="errorMessage" class="error" role="alert">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Exibir resultado da recomendação -->
+  <div *ngIf="cpuRecommendation">
+    <h3>Resultado da Recomendação</h3>
+    <p><strong>Processador:</strong> {{ cpuRecommendation.processor }}</p>
+    <p><strong>Arquitetura:</strong> {{ cpuRecommendation.architecture }}</p>
+    <p><strong>Cache:</strong> {{ cpuRecommendation.cacheInfo }}</p>
+    <p><strong>Frequência:</strong> {{ cpuRecommendation.frequency }}</p>
+    <p><strong>Justificativa:</strong> {{ cpuRecommendation.justification }}</p>
+  </div>
+</div>
+
